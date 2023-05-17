@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        button {
+            background-color: pink;
+            color: white;
+            border: none;
+            padding: 20px;
+            margin: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #unclickable {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="clickable">Libera a 🌸 esse fim de semana?</button>
+    <button id="unclickable">Não</button>
+    <script>
+        document.getElementById('unclickable').addEventListener('mouseover', function(e) {
+            var maxX = window.innerWidth - e.target.offsetWidth;
+            var maxY = window.innerHeight - e.target.offsetHeight;
+            e.target.style.left = Math.floor(Math.random() * maxX) + 'px';
+            e.target.style.top = Math.floor(Math.random() * maxY) + 'px';
+        });
+    </script>
+</body>
+</html>
